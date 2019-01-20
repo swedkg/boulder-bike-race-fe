@@ -1,31 +1,13 @@
-<section fxLayout="column">
-  <div fxFlexAlign="center">
-    <p>Welcome to the Material Angular Playground</p>
-  </div>
+<h1 class="display-4">Home page</h1>
+<p class="lead">
+  There must be a home page with basic information about the event and a counter
+  that shows the number of months, days, hours, minutes, and seconds until the
+  race (April 1, 2020).
+</p>
 
-  <p>In this applicatoin we are going to work with:</p>
-
-  <mat-tab-group
-    selectedIndex
-    (selectedTabChange)="executeSelectedChange($event)"
-  >
-    <mat-tab label="Material Components">
-      <p>
-        We are going to use different material components to create nice looking
-        angular app.
-      </p>
-    </mat-tab>
-    <mat-tab label="Consume .NET Core Web API">
-      <p>
-        We will consume our .NET Core applicatoin. Basicaly, we will create
-        complete CRUD client app.
-      </p>
-    </mat-tab>
-    <mat-tab label="Fully responsive navigation menu">
-      <p>
-        By using material components, we are going to create fully responsive
-        navigation menu, with its side-bar as well.
-      </p>
-    </mat-tab>
-  </mat-tab-group>
-</section>
+<div class="countdown">
+  <h3 class="timer">
+    <span id="days"></span> Day(s) <span id="hours"></span> Hour(s)
+    <span id="minutes"></span> Minute(s) <span id="seconds"></span> Second(s)
+  </h3>
+</div>

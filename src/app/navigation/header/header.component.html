@@ -1,14 +1,23 @@
 <mat-toolbar color="primary">
-  <div fxHide.gt-xs>
+  <div fxHide.gt-xs fxLayout fxLayoutAlign="center center">
     <button mat-icon-button (click)="onToggleSidenav()">
       <mat-icon>menu</mat-icon>
     </button>
+    <div>Boulder Bike Tour</div>
   </div>
-  <div><a routerLink="/home">Owner-Account</a></div>
-  <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
-    <ul fxLayout fxLayoutGap="15px" class="navigation-items">
-      <li><a routerLink="/owner">Owner Actions</a></li>
-      <li><a routerLink="/account">Account Actions</a></li>
+  <div fxFlex fxLayout fxHide.xs>
+    <ul
+      fxLayout
+      fxLayoutGap="15px"
+      fxLayoutAlign="space-around"
+      fxFlex="1 1 auto"
+      class="navigation-items"
+    >
+      <li><a routerLink="/home">Boulder Bike Tour</a></li>
+      <li><a routerLink="/photos">Photos</a></li>
+      <li><a routerLink="/location">Location</a></li>
+      <li><a routerLink="/riders">Riders</a></li>
+      <li><a routerLink="/contest">Contest</a></li>
     </ul>
   </div>
 </mat-toolbar>
