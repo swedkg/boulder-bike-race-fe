@@ -1,7 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 // @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
-// @import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+@import '../node_modules/normalize.css/normalize.css';
+@import '../node_modules/roboto-fontface/css/roboto/roboto-fontface.css'; // @import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+
 // @import "~@angular/material/prebuilt-themes/purple-green.css";
 
 /* for sidenav to take a whole page */
@@ -10,3 +12,17 @@ body {
   margin: 0;
   height: 100%;
 }
+
+* {
+  box-sizing: content-box;
+  font-family: 'Roboto';
+}
+
+// router-outlet ~ * {
+//   position: absolute;
+//   left: 0;
+//   right: 0;
+//   top: 48px;
+//   bottom: 0;
+//   margin: 1rem;
+// }

@@ -15,6 +15,10 @@ import { PhotosComponent } from './photos/photos.component';
 import { LocationComponent } from './location/location.component';
 import { RidersComponent } from './riders/riders.component';
 import { ContestComponent } from './contest/contest.component';
+import { CounterComponent } from './counter/counter.component';
+import { GalleryComponent } from './gallery/gallery.component';
+import { MasonryGalleryModule } from 'ngx-masonry-gallery';
+import { NgxMasonryModule } from 'ngx-masonry';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,9 @@ import { ContestComponent } from './contest/contest.component';
     PhotosComponent,
     LocationComponent,
     RidersComponent,
-    ContestComponent
+    ContestComponent,
+    CounterComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +40,9 @@ import { ContestComponent } from './contest/contest.component';
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,
-    RoutingModule
+    RoutingModule,
+    MasonryGalleryModule,
+    NgxMasonryModule
   ],
   providers: [],
   bootstrap: [AppComponent]

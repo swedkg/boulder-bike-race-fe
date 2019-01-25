@@ -1,5 +1,7 @@
 <mat-nav-list fxLayout="column">
-  <a routerLink="/home">Boulder Bike Tour</a>
-  <a routerLink="/photos">Photos</a> <a routerLink="/location">Location</a>
-  <a routerLink="/riders">Riders</a> <a routerLink="/contest">Contest</a>
+  <a routerLink="/home" (click)="onSidenavClose()">Boulder Bike Tour</a>
+  <a routerLink="/photos" (click)="onSidenavClose()">Photos</a>
+  <a routerLink="/location" (click)="onSidenavClose()">Location</a>
+  <a routerLink="/riders" (click)="onSidenavClose()">Riders</a>
+  <a routerLink="/contest" (click)="onSidenavClose()">Contest</a>
 </mat-nav-list>

@@ -1,0 +1,12 @@
+<p>gallery works!</p>
+<!-- <ngx-masonry-gallery [width]="50" [images]="images"></ngx-masonry-gallery> -->
+<ngx-masonry>
+  <div ngxMasonryItem class="masonry-item" *ngFor="let item of masonryItems">
+    <img src="{{ item.src }}" />
+  </div>
+</ngx-masonry>
+
+<!-- html += '<div class="grid-item">';
+    html += '<img src="' + src + '"';
+    html += '
+      </div>'; -->

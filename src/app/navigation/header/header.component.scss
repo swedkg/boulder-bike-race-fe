@@ -15,11 +15,10 @@ a:active {
 }
 
 mat-toolbar {
-  border-radius: 3px;
+  background-color: hsl(0, 0%, 20%);
+  position: fixed;
+  color: white;
 }
 
 @media (max-width: 959px) {
-  mat-toolbar {
-    border-radius: 0px;
-  }
 }
