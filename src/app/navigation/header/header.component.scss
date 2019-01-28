@@ -15,9 +15,10 @@ a:active {
 }
 
 mat-toolbar {
-  background-color: hsl(0, 0%, 20%);
+  background-color: hsla(0, 0%, 20%, 1);
   position: fixed;
   color: white;
+  height: 48px;
 }
 
 @media (max-width: 959px) {

@@ -4,7 +4,7 @@ import {
   IMasonryGalleryImage
 } from 'ngx-masonry-gallery';
 
-import { NgxMasonryModule } from 'ngx-masonry';
+import { NgxMasonryModule, NgxMasonryOptions } from 'ngx-masonry';
 
 @NgModule({
   imports: [MasonryGalleryModule, IMasonryGalleryImage, NgxMasonryModule]
@@ -17,16 +17,12 @@ import { NgxMasonryModule } from 'ngx-masonry';
 export class GalleryComponent implements OnInit {
   constructor() {}
 
-  // masonryItems = [
-  //   { title: 'item 1' },
-  //   { title: 'item 2' },
-  //   { title: 'item 3' },
-  //   { title: 'item 4' },
-  //   { title: 'item 5' },
-  //   { title: 'item 6' }
-  // ];
-
-  // private width: number = 200;
+  public myOptions: NgxMasonryOptions = {
+    transitionDuration: '0.25s',
+    itemSelector: '.masonry-item',
+    percentPosition: true,
+    columnWidth: '.masonry-sizer'
+  };
 
   masonryItems = [
     {

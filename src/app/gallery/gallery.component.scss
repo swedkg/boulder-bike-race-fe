@@ -1,3 +1,27 @@
+@import '~src/scss/variables';
+@import '~src/scss/mixins';
+
+.masonry-sizer,
 .masonry-item {
-  width: 200px;
+  width: 33%;
+  @include md-max {
+    width: 100%;
+  }
 }
+
+.masonry-item {
+  // float: left;
+  box-sizing: border-box;
+  padding: 0 6px;
+  padding-bottom: 8px;
+  @include md-max {
+    padding: 6px;
+  }
+}
+
+.masonry-item img {
+  display: block;
+  max-width: 100%;
+}
+
+// .masonry-item
