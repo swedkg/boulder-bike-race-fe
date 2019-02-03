@@ -58,6 +58,7 @@ export class GalleryComponent implements OnInit {
   public masonryItems = [];
   private photos;
   private photosPage = 0;
+  private appPhotosSection;
 
   public myOptions: NgxMasonryOptions = {
     transitionDuration: '0.25s',
@@ -82,8 +83,9 @@ export class GalleryComponent implements OnInit {
     };
   }
 
-  private db = this._debounce(
-    function(appPhotosSection) {
+  private addPhotos = this._debounce(
+    function() {
+      let appPhotosSection = this.appPhotosSection;
       let scrollTop = appPhotosSection.scrollTop, // pixels hidden in top due to the scroll. With no scroll its value is 0.
         scrollHeight = appPhotosSection.scrollHeight, // pixels of the whole div
         clientHeight = appPhotosSection.clientHeight; //pixels that you see in your browser.
@@ -94,6 +96,7 @@ export class GalleryComponent implements OnInit {
         this.photosPage++;
         let tempPhotos = [];
         tempPhotos.concat(this.masonryItems);
+
         this.galleryService.getPhotos(this.photosPage).subscribe(data => {
           let photos = data.photos;
           photos.photo.forEach(el => {
@@ -111,7 +114,7 @@ export class GalleryComponent implements OnInit {
             this.masonryItems.push({ src: url });
           });
           // this.masonryItems = tempPhotos.slice(0);
-          console.log(data, this.masonryItems, this.photosPage);
+          console.log(this);
         });
       }
       console.log(scrollTop, scrollPerCent);
@@ -123,11 +126,13 @@ export class GalleryComponent implements OnInit {
   ngOnInit() {
     this.photosPage++;
     let self = this;
-    let appPhotosSection = document.querySelector('app-photos section');
+    this.appPhotosSection = document.querySelector('app-photos section');
 
-    appPhotosSection.addEventListener('scroll', function() {
-      self.db(appPhotosSection);
+    this.appPhotosSection.addEventListener('scroll', function() {
+      self.addPhotos();
     });
+
+    console.log(this);
 
     this.galleryService.getPhotos(this.photosPage).subscribe(data => {
       this.photos = data.photos;
@@ -146,6 +151,12 @@ export class GalleryComponent implements OnInit {
         this.masonryItems.push({ src: url });
       });
       console.log(data, this.masonryItems);
+    });
+  }
+
+  ngOnDestroy() {
+    this.appPhotosSection.removeEventListener('scroll', function() {
+      self.addPhotos();
     });
   }
 }
