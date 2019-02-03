@@ -1,9 +1,17 @@
 <p>gallery works!</p>
 <!-- <ngx-masonry-gallery [width]="50" [images]="images"></ngx-masonry-gallery> -->
-<ngx-masonry [useImagesLoaded]="true" [options]="myOptions">
+<ngx-masonry
+  [useImagesLoaded]="true"
+  [options]="myOptions"
+  [updateLayout]="updateMasonryLayout"
+>
   <div class="masonry-sizer"></div>
-  <div ngxMasonryItem class="masonry-item" *ngFor="let item of masonryItems">
-    <img src="{{ item.src }}" />
+  <div
+    ngxMasonryItem
+    class="masonry-item"
+    *ngFor="let item of masonryItems; index as i"
+  >
+    <img src="{{ item.src }}" class="img--{{ i }}" />
   </div>
 </ngx-masonry>
 

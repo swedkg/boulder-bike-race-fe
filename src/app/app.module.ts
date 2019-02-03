@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +20,7 @@ import { CounterComponent } from './counter/counter.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { MasonryGalleryModule } from 'ngx-masonry-gallery';
 import { NgxMasonryModule } from 'ngx-masonry';
+import { GalleryService } from './gallery/gallery.service';
 
 @NgModule({
   declarations: [
@@ -42,9 +44,10 @@ import { NgxMasonryModule } from 'ngx-masonry';
     FlexLayoutModule,
     RoutingModule,
     MasonryGalleryModule,
-    NgxMasonryModule
+    NgxMasonryModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [GalleryService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
