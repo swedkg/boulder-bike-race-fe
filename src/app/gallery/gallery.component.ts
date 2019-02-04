@@ -156,7 +156,7 @@ export class GalleryComponent implements OnInit {
 
   ngOnDestroy() {
     this.appPhotosSection.removeEventListener('scroll', function() {
-      self.addPhotos();
+      this.addPhotos();
     });
   }
 }

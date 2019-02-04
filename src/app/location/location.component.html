@@ -1,1 +1,11 @@
-<section><p>location works!</p></section>
+<section>
+  <p>location works!</p>
+  <agm-map [fitBounds]="true">
+    <agm-marker
+      *ngFor="let m of markers; let i = index"
+      [agmFitBounds]="true"
+      [latitude]="m.lat"
+      [longitude]="m.lng"
+    ></agm-marker>
+  </agm-map>
+</section>

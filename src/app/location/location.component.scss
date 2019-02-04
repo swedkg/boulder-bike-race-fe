@@ -1,0 +1,10 @@
+section {
+  height: calc(100vh - 80px);
+  padding: 1rem;
+  margin-top: 48px;
+  background-color: hsla(150, 100%, 50%, 0.2);
+  overflow: auto;
+}
+agm-map {
+  height: calc(100vh - 200px);
+}

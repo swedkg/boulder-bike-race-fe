@@ -21,6 +21,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { MasonryGalleryModule } from 'ngx-masonry-gallery';
 import { NgxMasonryModule } from 'ngx-masonry';
 import { GalleryService } from './gallery/gallery.service';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,10 @@ import { GalleryService } from './gallery/gallery.service';
     RoutingModule,
     MasonryGalleryModule,
     NgxMasonryModule,
-    HttpClientModule
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAAxU077IxAHkK25YbCs6rRwwTw7Gx-MHg'
+    })
   ],
   providers: [GalleryService],
   bootstrap: [AppComponent]
