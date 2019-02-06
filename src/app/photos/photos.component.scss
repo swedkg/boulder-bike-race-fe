@@ -1,7 +1,10 @@
+@import '~src/scss/variables';
+@import '~src/scss/mixins';
+
 section {
-  height: calc(100vh - 80px);
+  height: calc(100vh - #{$mat-toolbar-height} - 2rem);
   padding: 1rem;
-  margin-top: 48px;
+  margin-top: $mat-toolbar-height;
   background-color: hsla(200, 100%, 50%, 0.2);
   overflow: auto;
 }

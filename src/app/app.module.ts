@@ -22,6 +22,7 @@ import { MasonryGalleryModule } from 'ngx-masonry-gallery';
 import { NgxMasonryModule } from 'ngx-masonry';
 import { GalleryService } from './gallery/gallery.service';
 import { AgmCoreModule } from '@agm/core';
+import { RidersService } from './riders.service';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,7 @@ import { AgmCoreModule } from '@agm/core';
       apiKey: 'AIzaSyAAxU077IxAHkK25YbCs6rRwwTw7Gx-MHg'
     })
   ],
-  providers: [GalleryService],
+  providers: [GalleryService, RidersService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

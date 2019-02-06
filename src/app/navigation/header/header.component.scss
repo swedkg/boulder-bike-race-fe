@@ -1,3 +1,6 @@
+@import '~src/scss/variables';
+@import '~src/scss/mixins';
+
 a {
   text-decoration: none;
   color: white;
@@ -18,7 +21,8 @@ mat-toolbar {
   background-color: hsla(0, 0%, 20%, 1);
   position: fixed;
   color: white;
-  height: 48px;
+  height: $mat-toolbar-height;
+  z-index: 10000;
 }
 
 @media (max-width: 959px) {

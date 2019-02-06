@@ -1,10 +1,13 @@
+@import '~src/scss/variables';
+@import '~src/scss/mixins';
+
 section {
-  height: calc(100vh - 80px);
-  padding: 1rem;
-  margin-top: 48px;
+  height: calc(100vh - #{$mat-toolbar-height});
+  // padding: 1rem;
+  margin-top: $mat-toolbar-height;
   background-color: hsla(150, 100%, 50%, 0.2);
-  overflow: auto;
+  overflow: hidden;
 }
 agm-map {
-  height: calc(100vh - 200px);
+  height: 100%;
 }
