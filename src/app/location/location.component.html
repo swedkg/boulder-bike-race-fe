@@ -5,11 +5,16 @@
       [agmFitBounds]="true"
       [latitude]="m.lat"
       [longitude]="m.lng"
-      [label]="i + 1 + ''"
+      [opacity]="0"
     >
+      <agm-overlay [latitude]="m.lat" [longitude]="m.lng">
+        <div><img src="{{ m.img }}" style="width: 100%; height: auto" /></div>
+      </agm-overlay>
       <agm-info-window
         ><strong>{{ m.firstName }} {{ m.lastName }}</strong></agm-info-window
       >
     </agm-marker>
   </agm-map>
 </section>
+
+<!-- [iconUrl]="m.img" -->

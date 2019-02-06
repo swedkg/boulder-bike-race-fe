@@ -22,6 +22,7 @@ import { MasonryGalleryModule } from 'ngx-masonry-gallery';
 import { NgxMasonryModule } from 'ngx-masonry';
 import { GalleryService } from './gallery/gallery.service';
 import { AgmCoreModule } from '@agm/core';
+import { AgmOverlays } from 'agm-overlays';
 import { RidersService } from './riders.service';
 
 @NgModule({
@@ -48,6 +49,7 @@ import { RidersService } from './riders.service';
     MasonryGalleryModule,
     NgxMasonryModule,
     HttpClientModule,
+    AgmOverlays,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAAxU077IxAHkK25YbCs6rRwwTw7Gx-MHg'
     })

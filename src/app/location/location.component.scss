@@ -11,3 +11,12 @@ section {
 agm-map {
   height: 100%;
 }
+
+agm-map img[src*='random'] {
+  border-radius: 100px;
+  width: 50px !important;
+  height: auto !important;
+  position: absolute;
+  top: -25px;
+  left: -15px;
+}
