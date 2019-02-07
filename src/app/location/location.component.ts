@@ -6,7 +6,7 @@ import {
   ViewChild
 } from '@angular/core';
 import { AgmMap } from '@agm/core';
-import { RidersService } from '../riders.service';
+import { RidersService } from '../riders/riders.service';
 
 @NgModule({
   providers: [RidersService]
@@ -22,7 +22,7 @@ export class LocationComponent implements OnInit {
   // lat: number = 51.678418;
   // lng: number = 7.809007;
 
-  markers = [];
+  public markers: {} = [];
 
   @ViewChild(AgmMap)
   public agmMap: AgmMap;
@@ -39,21 +39,21 @@ export class LocationComponent implements OnInit {
     console.log(this);
     this.RidersService.getriders().subscribe(data => {
       this.markers = data;
-      console.log(data, this);
+      // console.log(data, this.markers);
     });
   }
 }
 
 // just an interface for type safety.
-interface marker {
-  lat: number;
-  lng: number;
-  label?: string;
-  quote?: string;
-  firstName?: string;
-  lastName?: string;
-  img?: string;
-  stateOfOrigin?: string;
-  cityOfOrigin?: string;
-  draggable: boolean;
-}
+// interface marker {
+//   lat: number;
+//   lng: number;
+//   label?: string;
+//   quote?: string;
+//   firstName?: string;
+//   lastName?: string;
+//   img?: string;
+//   stateOfOrigin?: string;
+//   cityOfOrigin?: string;
+//   draggable: boolean;
+// }

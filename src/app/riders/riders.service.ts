@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { rider } from './rider';
 
 @Injectable({
   providedIn: 'root'
@@ -10,10 +11,6 @@ export class RidersService {
 
   getriders(): Observable<rider> {
     let url: string = 'https://api.myjson.com/bins/1753m4';
-    return this.http.get<Observable>(url);
+    return this.http.get<rider>(url);
   }
-}
-
-interface rider {
-  name: string;
 }

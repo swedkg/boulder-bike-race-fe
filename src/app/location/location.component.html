@@ -10,9 +10,14 @@
       <agm-overlay [latitude]="m.lat" [longitude]="m.lng">
         <div><img src="{{ m.img }}" style="width: 100%; height: auto" /></div>
       </agm-overlay>
-      <agm-info-window
-        ><strong>{{ m.firstName }} {{ m.lastName }}</strong></agm-info-window
-      >
+      <!-- <agm-info-window
+        ></agm-info-window
+      > -->
+      <agm-snazzy-info-window [maxWidth]="200" [closeWhenOthersOpen]="true">
+        <ng-template>
+          <strong>{{ m.firstName }} {{ m.lastName }}</strong>
+        </ng-template>
+      </agm-snazzy-info-window>
     </agm-marker>
   </agm-map>
 </section>

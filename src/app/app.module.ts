@@ -22,8 +22,9 @@ import { MasonryGalleryModule } from 'ngx-masonry-gallery';
 import { NgxMasonryModule } from 'ngx-masonry';
 import { GalleryService } from './gallery/gallery.service';
 import { AgmCoreModule } from '@agm/core';
+import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
 import { AgmOverlays } from 'agm-overlays';
-import { RidersService } from './riders.service';
+import { RidersService } from './riders/riders.service';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { RidersService } from './riders.service';
     AgmOverlays,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAAxU077IxAHkK25YbCs6rRwwTw7Gx-MHg'
-    })
+    }),
+    AgmSnazzyInfoWindowModule
   ],
   providers: [GalleryService, RidersService],
   bootstrap: [AppComponent]
