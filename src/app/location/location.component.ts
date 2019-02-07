@@ -3,7 +3,8 @@ import {
   Component,
   OnInit,
   HostListener,
-  ViewChild
+  ViewChild,
+  ViewEncapsulation
 } from '@angular/core';
 import { AgmMap } from '@agm/core';
 import { RidersService } from '../riders/riders.service';
@@ -14,7 +15,8 @@ import { RidersService } from '../riders/riders.service';
 @Component({
   selector: 'app-location',
   templateUrl: './location.component.html',
-  styleUrls: ['./location.component.scss']
+  styleUrls: ['./location.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class LocationComponent implements OnInit {
   constructor(private RidersService: RidersService) {}
@@ -39,7 +41,7 @@ export class LocationComponent implements OnInit {
     console.log(this);
     this.RidersService.getriders().subscribe(data => {
       this.markers = data;
-      // console.log(data, this.markers);
+      console.log(data);
     });
   }
 }

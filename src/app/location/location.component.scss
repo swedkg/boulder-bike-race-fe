@@ -12,11 +12,54 @@ agm-map {
   height: 100%;
 }
 
-agm-map img[src*='random'] {
+agm-map img.marker-image[src*='random'] {
   border-radius: 100px;
   width: 50px !important;
   height: auto !important;
   position: absolute;
   top: -25px;
   left: -15px;
+}
+
+.si-wrapper-top.si-has-border.agmSnazzyInfoWindow {
+  width: 300px;
+  // height: 300px;
+  margin-top: -45px !important;
+
+  img {
+    width: 302px;
+    height: auto;
+  }
+
+  .si-content-wrapper {
+    padding: 0rem;
+  }
+
+  p.name {
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 0.2rem;
+    margin-left: 1rem;
+  }
+
+  span.stateOfOrigin {
+    color: grey;
+    font-weight: normal;
+    font-style: italic;
+  }
+
+  p.city {
+    margin-top: 0;
+    margin-left: 1rem;
+    font-style: italic;
+    color: grey;
+  }
+
+  p.quote {
+    margin: 1rem;
+  }
+
+  .si-content {
+    overflow: unset;
+  }
 }
