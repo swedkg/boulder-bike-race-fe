@@ -11,7 +11,10 @@
     class="masonry-item"
     *ngFor="let item of masonryItems; index as i"
   >
-    <img src="{{ item.src }}" class="img--{{ i }}" />
+    <div class="container">
+      <img src="{{ item.src }}" class="img--{{ i }}" />
+      <p class="title">{{ item.title }}</p>
+    </div>
   </div>
 </ngx-masonry>
 

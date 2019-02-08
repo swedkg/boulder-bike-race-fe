@@ -12,16 +12,28 @@
 .masonry-item {
   // float: left;
   box-sizing: border-box;
-  padding: 0 6px;
-  padding-bottom: 8px;
-  @include md-max {
-    padding: 6px;
-  }
+  padding: 1rem;
+  // background-color: hsla(0, 50%, 50%, 0.2);
+  // outline: 1px solid red;
+  // @include md-max {
+  //   padding: 6px;
+  // }
 }
 
 .masonry-item img {
   display: block;
-  max-width: 100%;
+  width: 100%;
+}
+
+p.title {
+  position: absolute;
+  bottom: 0;
+  right: 1rem;
+  background: hsla(0, 0%, 0%, 0.5);
+  color: white;
+  padding: 0.6rem;
+  left: 1rem;
+  text-align: right;
 }
 
 // .masonry-item

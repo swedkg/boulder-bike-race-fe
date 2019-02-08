@@ -100,6 +100,7 @@ export class GalleryComponent implements OnInit {
         this.galleryService.getPhotos(this.photosPage).subscribe(data => {
           let photos = data.photos;
           photos.photo.forEach(el => {
+            let title = el.title;
             let url =
               'https://farm' +
               el.farm +
@@ -111,10 +112,10 @@ export class GalleryComponent implements OnInit {
               el.secret +
               '_z.jpg';
             // console.log(string);
-            this.masonryItems.push({ src: url });
+            this.masonryItems.push({ src: url, title: title });
           });
           // this.masonryItems = tempPhotos.slice(0);
-          console.log(this);
+          console.log(this, data);
         });
       }
       console.log(scrollTop, scrollPerCent);
@@ -137,6 +138,7 @@ export class GalleryComponent implements OnInit {
     this.galleryService.getPhotos(this.photosPage).subscribe(data => {
       this.photos = data.photos;
       this.photos.photo.forEach(el => {
+        let title = el.title;
         let url =
           'https://farm' +
           el.farm +
@@ -148,7 +150,7 @@ export class GalleryComponent implements OnInit {
           el.secret +
           '_z.jpg';
         // console.log(string);
-        this.masonryItems.push({ src: url });
+        this.masonryItems.push({ src: url, title: title });
       });
       console.log(data, this.masonryItems);
     });
