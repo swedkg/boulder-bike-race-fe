@@ -26,11 +26,11 @@
         [wrapperClass]="'agmSnazzyInfoWindow'"
       >
         <ng-template>
-          <p class="name">
-            {{ m.firstName }} {{ m.lastName }}
+          <p class="name">{{ m.firstName }} {{ m.lastName }}</p>
+          <p class="city">
+            {{ m.cityOfOrigin }}
             <span class="stateOfOrigin">({{ m.stateOfOrigin }})</span>
           </p>
-          <p class="city">{{ m.cityOfOrigin }}</p>
           <img src="{{ m.img }}" />
           <p class="quote">{{ m.quote }}</p>
         </ng-template>

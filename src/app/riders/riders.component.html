@@ -1,1 +1,26 @@
-<section><p>riders works!</p></section>
+<section>
+  <!-- <p>riders works!</p> -->
+  <div
+    class="riders-container"
+    fxLayout="row wrap"
+    fxLayoutAlign="space-around"
+    fxLayoutGap="20px"
+  >
+    <div *ngFor="let rider of riders; index as i">
+      <mat-card class="rider-card">
+        <mat-card-header>
+          <mat-card-title
+            >{{ rider.firstName }} {{ rider.lastName }}</mat-card-title
+          >
+          <mat-card-subtitle>
+            {{ rider.cityOfOrigin }} ({{ rider.stateOfOrigin }})
+          </mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="{{ rider.img }}" alt="Photo of a Shiba Inu" />
+        <mat-card-content>
+          <p>{{ rider.quote }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</section>

@@ -38,9 +38,9 @@ export class GalleryComponent implements OnInit {
   //   console.log('scrolling...');
   // }
 
-  // @HostListener('mouseenter', ['$event']) onMouseEnter(event) {
-  //   console.log('mouseenter works', event.target);
-  // }
+  @HostListener('mouseenter', ['$event']) onMouseEnter(event) {
+    console.log('mouseenter works', event.target);
+  }
 
   // @HostListener('click', ['$event']) onClick(e) {
   //   console.log('click works', e.target);
@@ -83,58 +83,7 @@ export class GalleryComponent implements OnInit {
     };
   }
 
-  private addPhotos = this._debounce(
-    function() {
-      let appPhotosSection = this.appPhotosSection;
-      let scrollTop = appPhotosSection.scrollTop, // pixels hidden in top due to the scroll. With no scroll its value is 0.
-        scrollHeight = appPhotosSection.scrollHeight, // pixels of the whole div
-        clientHeight = appPhotosSection.clientHeight; //pixels that you see in your browser.
-
-      let scrollPerCent = scrollTop / (scrollHeight - clientHeight);
-
-      if (scrollPerCent > 0.8) {
-        this.photosPage++;
-        let tempPhotos = [];
-        tempPhotos.concat(this.masonryItems);
-
-        this.galleryService.getPhotos(this.photosPage).subscribe(data => {
-          let photos = data.photos;
-          photos.photo.forEach(el => {
-            let title = el.title;
-            let url =
-              'https://farm' +
-              el.farm +
-              '.staticflickr.com/' +
-              el.server +
-              '/' +
-              el.id +
-              '_' +
-              el.secret +
-              '_z.jpg';
-            // console.log(string);
-            this.masonryItems.push({ src: url, title: title });
-          });
-          // this.masonryItems = tempPhotos.slice(0);
-          console.log(this, data);
-        });
-      }
-      console.log(scrollTop, scrollPerCent);
-    },
-    250,
-    false
-  );
-
-  ngOnInit() {
-    this.photosPage++;
-    let self = this;
-    this.appPhotosSection = document.querySelector('app-photos section');
-
-    this.appPhotosSection.addEventListener('scroll', function() {
-      self.addPhotos();
-    });
-
-    console.log(this);
-
+  private getPhotos() {
     this.galleryService.getPhotos(this.photosPage).subscribe(data => {
       this.photos = data.photos;
       this.photos.photo.forEach(el => {
@@ -154,6 +103,42 @@ export class GalleryComponent implements OnInit {
       });
       console.log(data, this.masonryItems);
     });
+  }
+
+  private addPhotos = this._debounce(
+    function() {
+      let appPhotosSection = this.appPhotosSection;
+      let scrollTop = appPhotosSection.scrollTop, // pixels hidden in top due to the scroll. With no scroll its value is 0.
+        scrollHeight = appPhotosSection.scrollHeight, // pixels of the whole div
+        clientHeight = appPhotosSection.clientHeight; //pixels that you see in your browser.
+
+      let scrollPerCent = scrollTop / (scrollHeight - clientHeight);
+
+      if (scrollPerCent > 0.8) {
+        this.photosPage++;
+        let tempPhotos = [];
+        tempPhotos.concat(this.masonryItems);
+
+        this.getPhotos();
+      }
+      console.log(scrollTop, scrollPerCent);
+    },
+    250,
+    false
+  );
+
+  ngOnInit() {
+    this.photosPage++;
+    let self = this;
+    this.appPhotosSection = document.querySelector('app-photos section');
+
+    this.appPhotosSection.addEventListener('scroll', function() {
+      self.addPhotos();
+    });
+
+    console.log(this);
+
+    this.getPhotos();
   }
 
   ngOnDestroy() {

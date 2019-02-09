@@ -1,4 +1,20 @@
+@import '~src/scss/variables';
+@import '~src/scss/mixins';
+
 section {
-  height: 500px;
-  background-color: hsla(250, 100%, 50%, 0.2)
+  height: calc(100vh - #{$mat-toolbar-height} - 2rem);
+  padding: 1rem;
+  margin-top: $mat-toolbar-height;
+  background-color: hsla(200, 100%, 50%, 0.2);
+  overflow: auto;
+}
+
+.rider-card {
+  width: 300px;
+  margin-bottom: 1rem;
+}
+
+mat-card-title,
+mat-card-subtitle {
+  margin-left: -1rem;
 }
