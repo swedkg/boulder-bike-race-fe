@@ -6,8 +6,13 @@ a {
   color: white;
 }
 
-a:hover,
-a:active {
+a:active,
+a.active-link {
+  color: lightgray;
+  border-bottom: 1px solid red;
+}
+
+a:hover {
   color: lightgray;
 }
 

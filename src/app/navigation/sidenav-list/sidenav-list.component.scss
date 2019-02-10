@@ -5,10 +5,14 @@ a {
   padding: 1rem;
 }
 
-a:hover,
-a:active {
-  color: lightgray;
+a:active,
+a.active-link {
+  color: red;
 }
+
+// a:hover {
+//   color: lightgray;
+// }
 
 .nav-caption {
   display: inline-block;
