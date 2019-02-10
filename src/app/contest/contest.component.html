@@ -1,1 +1,23 @@
-<section><p>contest works!</p></section>
+<section fxLayout="column" fxFlex="100%" fxFlex.gt-sm="920px">
+  <p>contest works!</p>
+
+  <div class="form-container" fxLayout="column">
+    <mat-form-field>
+      <input matInput placeholder="First Name" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Last Name" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="email" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Slogan" />
+      <mat-hint align="end">Max 50 characters!</mat-hint>
+    </mat-form-field>
+    <button mat-stroked-button>Submit</button>
+  </div>
+</section>

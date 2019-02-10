@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material/material.module';
 import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material';
 import { LayoutComponent } from './layout/layout.component';
 import { RoutingModule } from './routing/routing.module';
 import { HeaderComponent } from './navigation/header/header.component';
@@ -47,6 +48,7 @@ import { RidersService } from './riders/riders.service';
     BrowserAnimationsModule,
     MaterialModule,
     MatCardModule,
+    MatInputModule,
     FlexLayoutModule,
     RoutingModule,
     MasonryGalleryModule,

@@ -6,10 +6,12 @@ import {
   MatToolbarModule,
   MatIconModule,
   MatButtonModule,
-  MatListModule
+  MatListModule,
+  MatSelectModule
 } from '@angular/material';
 
 import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [],
@@ -20,7 +22,9 @@ import { MatCardModule } from '@angular/material/card';
     MatIconModule,
     MatButtonModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    MatFormFieldModule,
+    MatSelectModule
   ],
   exports: [
     MatTabsModule,
@@ -29,7 +33,9 @@ import { MatCardModule } from '@angular/material/card';
     MatIconModule,
     MatButtonModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    MatFormFieldModule,
+    MatSelectModule
   ]
 })
 export class MaterialModule {}

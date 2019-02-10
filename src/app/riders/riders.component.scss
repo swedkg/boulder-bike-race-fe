@@ -5,12 +5,18 @@ section {
   height: calc(100vh - #{$mat-toolbar-height} - 2rem);
   padding: 1rem;
   margin-top: $mat-toolbar-height;
-  background-color: hsla(200, 100%, 50%, 0.2);
+  // background-color: hsla(200, 100%, 50%, 0.2);
   overflow: auto;
 }
 
+.riders-container {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .rider-card {
-  width: 300px;
+  width: 260px;
   margin-bottom: 1rem;
 }
 
