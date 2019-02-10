@@ -1,0 +1,202 @@
+[
+  {
+    "firstName": "Dustin",
+    "lastName": "Green",
+    "cityOfOrigin": "Hickory Hills",
+    "stateOfOrigin": "IL",
+    "lat": 40,
+    "lng": -105.35,
+    "img": "../../assets/male-25.jpg",
+    "quote": "Fishing relaxes me. It's like yoga, except I still get to kill something."
+  },
+  {
+    "firstName": "Jason",
+    "lastName": "Finn",
+    "cityOfOrigin": "Huntington Beach",
+    "stateOfOrigin": "CA",
+    "lat": 39.95,
+    "lng": -105.24,
+    "img": "../../assets/male-16.jpg",
+    "quote": "Honor: if you need it defined, you don't have it."
+  },
+  {
+    "firstName": "Howard",
+    "lastName": "Thompson",
+    "cityOfOrigin": "Hale",
+    "stateOfOrigin": "MO",
+    "lat": 40.06,
+    "lng": -105.26,
+    "img": "../../assets/male-35.jpg",
+    "quote": "Crying: acceptable at funerals and the Grand Canyon."
+  },
+  {
+    "firstName": "Maggie",
+    "lastName": "Lantz",
+    "cityOfOrigin": "Dublin",
+    "stateOfOrigin": "OH",
+    "lat": 40.03,
+    "lng": -105.23,
+    "img": "../../assets/female-37.jpg",
+    "quote": "Fish, for sport only, not for meat. Fish meat is practically a vegetable."
+  },
+  {
+    "firstName": "Lawrence",
+    "lastName": "Duran",
+    "cityOfOrigin": "Fort Myers",
+    "stateOfOrigin": "FL",
+    "lat": 40.04,
+    "lng": -105.23,
+    "img": "../../assets/male-19.jpg",
+    "quote": "Just give me all the bacon and eggs you have."
+  },
+  {
+    "firstName": "Irene",
+    "lastName": "Molina",
+    "cityOfOrigin": "Tucson",
+    "stateOfOrigin": "AZ",
+    "lat": 39.96,
+    "lng": -105.22,
+    "img": "../../assets/female-49.jpg",
+    "quote": "Keep your tears in your eyes where they belong."
+  },
+  {
+    "firstName": "Nancy",
+    "lastName": "Garner",
+    "cityOfOrigin": "Baltimore",
+    "stateOfOrigin": "MD",
+    "lat": 39.98,
+    "lng": -105.21,
+    "img": "../../assets/female-57.jpg",
+    "quote": "Any dog under fifty pounds is a cat and cats are useless."
+  },
+  {
+    "firstName": "Tara",
+    "lastName": "Taylor",
+    "cityOfOrigin": "Minneapolis",
+    "stateOfOrigin": "MN",
+    "lat": 40,
+    "lng": -105.25,
+    "img": "../../assets/female-8.jpg",
+    "quote": "Son, there is no wrong way to consume alcohol."
+  },
+  {
+    "firstName": "Alejandro",
+    "lastName": "Smith",
+    "cityOfOrigin": "Scarborough",
+    "stateOfOrigin": "ME",
+    "lat": 40.02,
+    "lng": -105.26,
+    "img": "../../assets/male-60.jpg",
+    "quote": "I'll take that steak to go. Please and thank you."
+  },
+  {
+    "firstName": "Tricia",
+    "lastName": "Renshaw",
+    "cityOfOrigin": "Mystic",
+    "stateOfOrigin": "CT",
+    "lat": 40.02,
+    "lng": -105.3,
+    "img": "../../assets/female-38.jpg",
+    "quote": "One rage every three months is permitted. Try not to hurt anyone who doesn't deserve it."
+  },
+  {
+    "firstName": "Travis",
+    "lastName": "Cook",
+    "cityOfOrigin": "Twin Lakes",
+    "stateOfOrigin": "WI",
+    "lat": 40.01,
+    "lng": -105.2,
+    "img": "../../assets/male-3.jpg",
+    "quote": "There's only one thing I hate more than lying: skim milk. Which is water that's lying about being milk."
+  },
+  {
+    "firstName": "Joan",
+    "lastName": "Brooks",
+    "cityOfOrigin": "Norfolk",
+    "stateOfOrigin": "VA",
+    "lat": 39.98,
+    "lng": -105.24,
+    "img": "../../assets/female-17.jpg",
+    "quote": "Honor: if you need it defined, you don't have it."
+  },
+  {
+    "firstName": "Joseph",
+    "lastName": "Rodgers",
+    "cityOfOrigin": "Wayne",
+    "stateOfOrigin": "NJ",
+    "lat": 39.99,
+    "lng": -105.25,
+    "img": "../../assets/male-79.jpg",
+    "quote": "There are only three ways to motivate people: money, fear, and hunger."
+  },
+  {
+    "firstName": "Matthew",
+    "lastName": "Gregson",
+    "cityOfOrigin": "Brashear",
+    "stateOfOrigin": "MO",
+    "lat": 40.01,
+    "lng": -105.29,
+    "img": "../../assets/male-23.jpg",
+    "quote": "Don't waste energy moving unless necessary."
+  },
+  {
+    "firstName": "Katie",
+    "lastName": "Dunlap",
+    "cityOfOrigin": "Marion",
+    "stateOfOrigin": "VA",
+    "lat": 39.97,
+    "lng": -105.27,
+    "img": "../../assets/female-13.jpg",
+    "quote": "There must be a mistake, you've accidentally given me the food that my food eats."
+  },
+  {
+    "firstName": "Leo",
+    "lastName": "Howard",
+    "cityOfOrigin": "Dallas",
+    "stateOfOrigin": "TX",
+    "lat": 39.97,
+    "lng": -105.33,
+    "img": "../../assets/male-20.jpg",
+    "quote": "It's always a good idea to demonstrate to your coworkers that you are capable of withstanding a tremendous amount of pain."
+  },
+  {
+    "firstName": "Maria",
+    "lastName": "Baisden",
+    "cityOfOrigin": "Raleigh",
+    "stateOfOrigin": "NC",
+    "lat": 40,
+    "lng": -105.29,
+    "img": "../../assets/female-46.jpg",
+    "quote": "When I eat, it is the food that is scared."
+  },
+  {
+    "firstName": "Sandy",
+    "lastName": "Townsend",
+    "cityOfOrigin": "Newport",
+    "stateOfOrigin": "PA",
+    "lat": 40.05,
+    "lng": -105.3,
+    "img": "../../assets/female-54.jpg",
+    "quote": "Breakfast food can serve many purposes."
+  },
+  {
+    "firstName": "Melinda",
+    "lastName": "Stephenson",
+    "cityOfOrigin": "Kahului",
+    "stateOfOrigin": "HI",
+    "lat": 39.99,
+    "lng": -105.31,
+    "img": "../../assets/female-12.jpg",
+    "quote": "I will take a free breakfast buffet anytime, anyplace."
+  },
+  {
+    "firstName": "Jason",
+    "lastName": "Nichols",
+    "cityOfOrigin": "Alexandria",
+    "stateOfOrigin": "VA",
+    "lat": 40.01,
+    "lng": -105.32,
+    "img": "../../assets/male-54.jpg",
+    "quote": "There are three acceptable haircuts: high and tight, crew cut, buzz cut."
+  }
+]
