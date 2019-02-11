@@ -4,6 +4,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material/material.module';
@@ -51,6 +53,8 @@ import { RidersService } from './riders/riders.service';
     MatInputModule,
     FlexLayoutModule,
     RoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     MasonryGalleryModule,
     NgxMasonryModule,
     HttpClientModule,

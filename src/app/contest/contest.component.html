@@ -1,23 +1,71 @@
 <section fxLayout="column" fxFlex="100%" fxFlex.gt-sm="920px">
   <p>contest works!</p>
 
-  <div class="form-container" fxLayout="column">
+  <!-- <div class="form-container" > -->
+  <form
+    [formGroup]="contestForm"
+    autocomplete="off"
+    novalidate
+    (ngSubmit)="submitForm(contestForm.value)"
+    fxLayout="column"
+  >
     <mat-form-field>
-      <input matInput placeholder="First Name" />
+      <input
+        type="text"
+        matInput
+        placeholder="First Name"
+        formControlName="firstName"
+        #firstName
+      />
+      <mat-error *ngIf="hasError('firstName', 'maxlength')"
+        >Your first name is more than 20 characters</mat-error
+      >
+      <mat-error *ngIf="hasError('firstName', 'required')"
+        >Your first name is required!</mat-error
+      >
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="Last Name" />
+      <input
+        type="text"
+        matInput
+        placeholder="Last Name"
+        formControlName="lastName"
+        #lastName
+      />
+      <mat-error *ngIf="hasError('lastName', 'maxlength')"
+        >Your name is more than 40 characters</mat-error
+      ><mat-error *ngIf="hasError('lastName', 'required')"
+        >Your last name is required</mat-error
+      >
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="email" />
+      <input
+        type="email"
+        matInput
+        placeholder="email"
+        formControlName="email"
+      />
+      <mat-error *ngIf="hasError('email', 'email')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="hasError('email', 'required')">
+        Email is <strong>required</strong>
+      </mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="Slogan" />
-      <mat-hint align="end">Max 50 characters!</mat-hint>
+      <input matInput placeholder="Slogan" formControlName="slogan" #slogan />
+      <!-- <mat-hint align="end">{{ slogan.value.length }}/50</mat-hint> -->
+      <mat-error *ngIf="hasError('slogan', 'maxlength')"
+        >Your slogan can't be more than 50 characters</mat-error
+      >
+      <mat-error *ngIf="hasError('slogan', 'required')"
+        >The slogan is required</mat-error
+      >
     </mat-form-field>
-    <button mat-stroked-button>Submit</button>
-  </div>
+    <button mat-stroked-button [disabled]="!contestForm.valid">Submit</button>
+  </form>
+  <!-- </div> -->
 </section>
