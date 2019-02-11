@@ -1,5 +1,15 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Output,
+  EventEmitter,
+  NgModule
+} from '@angular/core';
+import { globals } from '../../globals';
 
+@NgModule({
+  imports: [globals]
+})
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -7,10 +17,13 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   @Output() public sidenavToggle = new EventEmitter();
+  private globals = globals;
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this);
+  }
 
   public onToggleSidenav = () => {
     this.sidenavToggle.emit();

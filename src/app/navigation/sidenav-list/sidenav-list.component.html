@@ -18,6 +18,7 @@
     >Location</a
   >
   <a
+    *ngIf="globals.isRidersActive"
     routerLink="/riders"
     routerLinkActive="active-link"
     (click)="onSidenavClose()"

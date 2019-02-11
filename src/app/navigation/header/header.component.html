@@ -22,7 +22,9 @@
       <li>
         <a routerLink="/location" routerLinkActive="active-link">Location</a>
       </li>
-      <li><a routerLink="/riders" routerLinkActive="active-link">Riders</a></li>
+      <li *ngIf="globals.isRidersActive">
+        <a routerLink="/riders" routerLinkActive="active-link">Riders</a>
+      </li>
       <li>
         <a routerLink="/contest" routerLinkActive="active-link">Contest</a>
       </li>
