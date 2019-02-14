@@ -10,13 +10,17 @@
       <mat-card class="rider-card">
         <mat-card-header>
           <mat-card-title
-            >{{ rider.firstName }} {{ rider.lastName }}</mat-card-title
+            >{{ rider.first_name }} {{ rider.last_name }}</mat-card-title
           >
           <mat-card-subtitle>
-            {{ rider.cityOfOrigin }} ({{ rider.stateOfOrigin }})
+            {{ rider.city }} ({{ rider.state }})
           </mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src="{{ rider.img }}" alt="Photo of a Shiba Inu" />
+        <img
+          mat-card-image
+          src="{{ rider.image }}"
+          alt="Photo of a {{ rider.first_name }} {{ rider.last_name }}"
+        />
         <mat-card-content>
           <p>{{ rider.quote }}</p>
         </mat-card-content>

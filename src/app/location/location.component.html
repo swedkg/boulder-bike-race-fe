@@ -11,7 +11,7 @@
         <div>
           <img
             class="marker-image"
-            src="{{ m.img }}"
+            src="{{ m.image }}"
             style="width: 100%; height: auto"
           />
         </div>
@@ -26,12 +26,12 @@
         [wrapperClass]="'agmSnazzyInfoWindow'"
       >
         <ng-template>
-          <p class="name">{{ m.firstName }} {{ m.lastName }}</p>
+          <p class="name">{{ m.first_name }} {{ m.last_name }}</p>
           <p class="city">
-            {{ m.cityOfOrigin }}
-            <span class="stateOfOrigin">({{ m.stateOfOrigin }})</span>
+            {{ m.city }}
+            <span class="stateOfOrigin">({{ m.state }})</span>
           </p>
-          <img src="{{ m.img }}" />
+          <img src="{{ m.image }}" />
           <p class="quote">{{ m.quote }}</p>
         </ng-template>
       </agm-snazzy-info-window>

@@ -1,3 +1,1 @@
-export const globals = {
-  isRidersActive: false
-};
+export const isRidersActive = true;

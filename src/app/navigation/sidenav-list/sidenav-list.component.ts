@@ -1,22 +1,15 @@
-import {
-  Component,
-  OnInit,
-  Output,
-  EventEmitter,
-  NgModule
-} from '@angular/core';
-import { globals } from '../../globals';
-@NgModule({
-  imports: [globals]
-})
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import * as globals from '../../globals';
+
 @Component({
   selector: 'app-sidenav-list',
   templateUrl: './sidenav-list.component.html',
   styleUrls: ['./sidenav-list.component.scss']
+  // providers: [globals]
 })
 export class SidenavListComponent implements OnInit {
   @Output() sidenavClose = new EventEmitter();
-  private globals = globals;
+  public globals = globals;
   constructor() {}
 
   ngOnInit() {}

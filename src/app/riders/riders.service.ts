@@ -11,7 +11,8 @@ export class RidersService {
 
   getriders(): Observable<rider> {
     // let url: string = 'https://api.myjson.com/bins/1753m4';
-    let url: string = '../../assets/riders.json';
+    // let url: string = '../../assets/riders.json';
+    let url: string = 'http://localhost:3000/api/riders/';
     return this.http.get<rider>(url);
   }
 }
