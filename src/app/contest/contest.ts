@@ -1,6 +1,6 @@
 export interface ContestSubmission {
-  firstName: string;
-  LastName: string;
+  first_name: string;
+  last_name: string;
   email: string;
   slogan: string;
 }

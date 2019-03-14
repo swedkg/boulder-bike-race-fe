@@ -14,13 +14,13 @@
         type="text"
         matInput
         placeholder="First Name"
-        formControlName="firstName"
-        #firstName
+        formControlName="first_name"
+        #first_name
       />
-      <mat-error *ngIf="hasError('firstName', 'maxlength')"
+      <mat-error *ngIf="hasError('first_name', 'maxlength')"
         >Your first name is more than 20 characters</mat-error
       >
-      <mat-error *ngIf="hasError('firstName', 'required')"
+      <mat-error *ngIf="hasError('first_name', 'required')"
         >Your first name is required!</mat-error
       >
     </mat-form-field>
@@ -30,12 +30,12 @@
         type="text"
         matInput
         placeholder="Last Name"
-        formControlName="lastName"
-        #lastName
+        formControlName="last_name"
+        #last_name
       />
-      <mat-error *ngIf="hasError('lastName', 'maxlength')"
+      <mat-error *ngIf="hasError('last_name', 'maxlength')"
         >Your name is more than 40 characters</mat-error
-      ><mat-error *ngIf="hasError('lastName', 'required')"
+      ><mat-error *ngIf="hasError('last_name', 'required')"
         >Your last name is required</mat-error
       >
     </mat-form-field>

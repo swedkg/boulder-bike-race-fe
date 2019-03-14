@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ContestSubmission } from './contest';
+import { ContestService } from './contest.service';
 
 @NgModule({
   imports: [FormsModule, ReactiveFormsModule]
@@ -13,12 +13,17 @@ import { ContestSubmission } from './contest';
   encapsulation: ViewEncapsulation.Emulated
 })
 export class ContestComponent implements OnInit {
-  constructor() {}
+  constructor(private contestService: ContestService) {}
 
   public contestForm: FormGroup;
 
   public hasError = (controlName: string, errorName: string) => {
     return this.contestForm.controls[controlName].hasError(errorName);
+  };
+
+  public emailUsed = status => {
+    console.log(status, status === 200);
+    return status === 200;
   };
 
   /**
@@ -30,16 +35,18 @@ export class ContestComponent implements OnInit {
   }
 
   private postForm = contestFormvalue => {
-    console.log(contestFormvalue);
+    this.contestService.createSlogan(contestFormvalue).subscribe(res => {
+      console.log(res);
+    });
   };
 
   ngOnInit() {
     this.contestForm = new FormGroup({
-      firstName: new FormControl('', [
+      first_name: new FormControl('', [
         Validators.required,
         Validators.maxLength(20)
       ]),
-      lastName: new FormControl('', [
+      last_name: new FormControl('', [
         Validators.required,
         Validators.maxLength(40)
       ]),
