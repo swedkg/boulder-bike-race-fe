@@ -1,8 +1,19 @@
 <section>
-  <h1>Save the Date! {{ enddate }}</h1>
-  <p>
-    {{ _months }} Months, {{ _days }} Days, {{ _hours }}:{{ _minutes }}:{{
-      _seconds
-    }}
+  <p class="counter">
+    <span>{{ _months }} Months, {{ _days }} Days</span
+    ><span
+      >{{ _hours | number: '2.0' }}:{{ _minutes | number: '2.0' }}:{{
+        _seconds | number: '2.0'
+      }}</span
+    >
   </p>
+  <p class="save-the-date">
+    <!-- <span>Save the Date!</span> -->
+    <span>The race starts at </span><span>{{ enddate }}</span>
+  </p>
+  <div class="buttons">
+    <button mat-raised-button routerLink="/riders">
+      Get to know the riders</button
+    ><button mat-raised-button routerLink="/contest">Join our contest!</button>
+  </div>
 </section>

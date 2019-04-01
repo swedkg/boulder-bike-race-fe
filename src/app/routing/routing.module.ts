@@ -7,7 +7,7 @@ import { LocationComponent } from '../location/location.component';
 import { RidersComponent } from '../riders/riders.component';
 import { ContestComponent } from '../contest/contest.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'photos', component: PhotosComponent },
   { path: 'location', component: LocationComponent },
@@ -18,14 +18,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    RouterModule.forRoot(routes, {
-      scrollPositionRestoration: 'enabled',
-      anchorScrolling: 'enabled',
-      scrollOffset: [0, 264] // [x, y]
-    })
-  ],
+  imports: [CommonModule, RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class RoutingModule {}
