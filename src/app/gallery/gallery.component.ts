@@ -26,35 +26,6 @@ import { debounce } from 'rxjs/operators';
 export class GalleryComponent implements OnInit {
   constructor(private galleryService: GalleryService, private el: ElementRef) {}
 
-  // @HostListener('window:resize', ['$event']) onResize(event) {
-  //   console.log('window:resize', event.target);
-  // }
-
-  // @HostListener('scroll', ['$event']) onScroll($event) {
-  //   console.log($event.srcElement.scrollLeft, $event.srcElement.scrollTop);
-  // }
-
-  // @HostListener('window:scroll', ['$event']) onWindowScroll($event, event) {
-  //   console.log('scrolling...');
-  // }
-
-  @HostListener('mouseenter', ['$event']) onMouseEnter(event) {
-    console.log('mouseenter works', event.target);
-  }
-
-  // @HostListener('click', ['$event']) onClick(e) {
-  //   console.log('click works', e.target);
-  // }
-
-  // @HostListener('mousewheel', ['$event']) onScroll5(e) {
-  //   console.log('mousewheel works', e);
-  // }
-
-  // @HostListener('document:mousemove', ['$event'])
-  // sfdsfsd(e) {
-  //   console.log('mousemove works', e);
-  // }
-
   public masonryItems = [];
   private photos;
   private photosPage = 0;
@@ -66,6 +37,13 @@ export class GalleryComponent implements OnInit {
     percentPosition: true,
     columnWidth: '.masonry-sizer'
   };
+
+  /**
+   * imageError
+   */
+  public imageError(index) {
+    this.masonryItems[index].hasImage = false;
+  }
 
   private _debounce(func, wait, immediate) {
     var timeout;
@@ -99,9 +77,14 @@ export class GalleryComponent implements OnInit {
           el.secret +
           '_z.jpg';
         // console.log(string);
-        this.masonryItems.push({ src: url, title: title });
+
+        this.masonryItems.push({
+          src: url,
+          title: title,
+          hasImage: true
+        });
       });
-      console.log(data, this.masonryItems);
+      // console.log(data, this.masonryItems);
     });
   }
 
@@ -121,7 +104,7 @@ export class GalleryComponent implements OnInit {
 
         this.getPhotos();
       }
-      console.log(scrollTop, scrollPerCent);
+      // console.log(scrollTop, scrollPerCent);
     },
     250,
     false
@@ -136,7 +119,7 @@ export class GalleryComponent implements OnInit {
       self.addPhotos();
     });
 
-    console.log(this);
+    // console.log(this);
 
     this.getPhotos();
   }

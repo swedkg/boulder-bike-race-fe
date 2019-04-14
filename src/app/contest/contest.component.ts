@@ -2,9 +2,10 @@ import { Component, OnInit, ViewEncapsulation, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ContestService } from './contest.service';
+import { MatSnackBar } from '@angular/material';
 
 @NgModule({
-  imports: [FormsModule, ReactiveFormsModule]
+  imports: [FormsModule, ReactiveFormsModule, MatSnackBar]
 })
 @Component({
   selector: 'app-contest',
@@ -13,7 +14,10 @@ import { ContestService } from './contest.service';
   encapsulation: ViewEncapsulation.Emulated
 })
 export class ContestComponent implements OnInit {
-  constructor(private contestService: ContestService) {}
+  constructor(
+    private contestService: ContestService,
+    private snackBar: MatSnackBar
+  ) {}
 
   public contestForm: FormGroup;
 
@@ -21,9 +25,15 @@ export class ContestComponent implements OnInit {
     return this.contestForm.controls[controlName].hasError(errorName);
   };
 
-  public emailUsed = status => {
-    console.log(status, status === 200);
-    return status === 200;
+  public emailUsed = res => {
+    let message =
+      res.status === 200
+        ? res.body.email
+        : 'Thank you for participating to our contest!';
+    this.snackBar.open(message, '', {
+      duration: 3000
+    });
+    return res === 200;
   };
 
   /**
@@ -35,24 +45,37 @@ export class ContestComponent implements OnInit {
   }
 
   private postForm = contestFormvalue => {
+    console.log(contestFormvalue);
+
     this.contestService.createSlogan(contestFormvalue).subscribe(res => {
-      console.log(res);
+      this.emailUsed(res);
     });
   };
+
+  //         pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"
 
   ngOnInit() {
     this.contestForm = new FormGroup({
       first_name: new FormControl('', [
         Validators.required,
+        Validators.minLength(3),
         Validators.maxLength(20)
       ]),
       last_name: new FormControl('', [
         Validators.required,
+        Validators.minLength(3),
         Validators.maxLength(40)
       ]),
-      email: new FormControl('', [Validators.required, Validators.email]),
+      email: new FormControl('', [
+        Validators.required,
+        Validators.email,
+        Validators.pattern(
+          '[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}'
+        )
+      ]),
       slogan: new FormControl('', [
         Validators.required,
+        Validators.minLength(3),
         Validators.maxLength(50)
       ])
     });
